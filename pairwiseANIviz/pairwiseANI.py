@@ -157,7 +157,7 @@ def plot(anidf,
     if not os.path.exists(outdir):
         os.mkdir(outdir)
     
-    suffix=['svg','png','jpg','pdf','ps', 'eps']
+    suffix=['svg','png','jpg','pdf','tiff', 'eps']
     outfiles=['pairwiseANIviz.'+i for i in suffix]
     for file in outfiles:
         figure=os.path.join(outdir, file)
