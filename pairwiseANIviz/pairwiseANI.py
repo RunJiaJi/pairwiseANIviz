@@ -58,8 +58,8 @@ def rowColors(classidf, cols, taxaLevel='phylum', palette='hls'):
     uniqueTaxa = classidf[taxaLevel].unique().tolist()
     colorNums = len(uniqueTaxa)
     rgb_list = [i for i in sns.color_palette(palette,n_colors=colorNums)]
-    print(colorNums)
-    print(uniqueTaxa)
+    # print(colorNums)
+    # print(uniqueTaxa)
     lut = dict(zip(classidf[taxaLevel].unique(), rgb_list))
     row_colors_rgb = classidf[taxaLevel].map(lut)
 
@@ -84,6 +84,7 @@ def plot(anidf,
          ):
 
     plt.rcParams['svg.fonttype'] = 'none'
+    plt.rcParams["figure.dpi"] = 300
     # clustering
     linkage = hc.linkage(anidf.fillna(0), method=method, metric=metric)
 
@@ -93,13 +94,11 @@ def plot(anidf,
     custom_cmap.set_over(color='red')
 
     # see if there is classification info, calculate row colors
-    if classidf:
+    if classidf is not None:
         cols=set(anidf.columns.tolist())
         lut_colors = rowColors(classidf, cols, taxaLevel=taxaLevel, palette=palette)
         lut = lut_colors[0]
         handles = [Patch(facecolor=lut[name]) for name in lut]
-        plt.legend(handles, lut, title=taxaLevel,
-                bbox_to_anchor=[0.9, 0.1], bbox_transform=plt.gcf().transFigure, loc='lower right')
 
         ax=sns.clustermap(
             anidf.fillna(0), 
@@ -115,7 +114,6 @@ def plot(anidf,
             col_cluster=col_cluster,
             annot=annotation,
             row_colors=lut_colors[1],
-            cbar = True,
             xticklabels = False,
             yticklabels = True, 
             cbar_kws={
@@ -124,7 +122,11 @@ def plot(anidf,
                 "spacing": "proportional"
             },
             tree_kws={"linewidths": 1.5},
+            fmt=".3g"
             )
+        
+        plt.legend(handles, lut, title=taxaLevel,
+                bbox_to_anchor=[0.9, 0.9], bbox_transform=plt.gcf().transFigure, loc='upper right')
     else:
         ax=sns.clustermap(
             anidf.fillna(0), 
@@ -148,6 +150,7 @@ def plot(anidf,
                 "spacing": "proportional"
             },
             tree_kws={"linewidths": 1.5},
+            fmt="d"
             )
     
     # save figs

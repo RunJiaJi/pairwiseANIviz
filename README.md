@@ -1,7 +1,19 @@
 # pairwiseANIviz
 [![PyPI version](https://badge.fury.io/py/asperaSRAgetter.svg)](https://badge.fury.io/py/asperaSRAgetter)
 
-Pairwise ANI (Average Nucleotide Identity) visulization tool.
+Pairwise ANI (Average Nucleotide Identity) visulization tool. 
+
+## Example
+#### 1. Using different matplotlib colormaps
+<img src="/static/example_with_diffferent_cmap.svg" alt="Figure"/>
+
+#### 2. With taxonomy indicated by different palettes
+<img src="/static/example_with_different_palette.svg" alt="Figure"/>
+
+#### 3. With ANI values illustrated
+<img src="/static/example_with_annotation.svg" alt="Figure"/>
+
+
 
 ## Installation
 <!-- AsperaSRAgetter has been distributed on [pypi](https://pypi.org/project/AsperaSRAgetter/). You can easily install AsperaSRAgetter through pip. AsperaSRAgetter depends on Aspera-CLI to retrive sequencing data from ENA. It is recommended to install Aspera-CLI [with Conda](https://anaconda.org/hcc/aspera-cli).
