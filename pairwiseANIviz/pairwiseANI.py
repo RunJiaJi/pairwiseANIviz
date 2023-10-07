@@ -90,7 +90,7 @@ def plot(anidf,
     # custome cmap
     custom_cmap=plt.cm.__dict__[cmap]
     custom_cmap.set_under(color='lightgrey')
-    custom_cmap.set_above(color='red')
+    custom_cmap.set_over(color='red')
 
     # see if there is classification info, calculate row colors
     if classidf:
