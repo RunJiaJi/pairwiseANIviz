@@ -36,7 +36,7 @@ conda install -c hcc aspera-cli
 ## Usage
 
 
-<img src="/static/Overall_Usage.png" alt="Figure"/>
+![overallUsage](./static/Overall_Usage.png) 
 
 #### Options
 
