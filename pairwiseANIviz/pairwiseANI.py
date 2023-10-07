@@ -36,7 +36,7 @@ def readIput(anifile, classifile=None):
             print('Please check the classification result or rerun the classification analysis')
             sys.exit()
 
-        taxaLevels = ['domain', 'phylum', 'class', 'order', 'family', 'genus', 'species']
+        taxaLevels = 'domain phylum class order family genus species'.split()
         for idx in range(7):
             classidf[taxaLevels[idx]] = classidf.iloc[:,1].apply(lambda x: x.split(';')[idx])
 
@@ -77,6 +77,7 @@ def plot(anidf,
          row_cluster=False,
          col_cluster=False,
          annotation=False,
+         vmax=100,
          classidf=None,
          taxaLevel='phylum',
          palette='hls',
@@ -85,6 +86,11 @@ def plot(anidf,
     plt.rcParams['svg.fonttype'] = 'none'
     # clustering
     linkage = hc.linkage(anidf.fillna(0), method=method, metric=metric)
+
+    # custome cmap
+    custom_cmap=plt.cm.__dict__[cmap]
+    custom_cmap.set_under(color='lightgrey')
+    custom_cmap.set_above(color='red')
 
     # see if there is classification info, calculate row colors
     if classidf:
@@ -97,9 +103,9 @@ def plot(anidf,
 
         ax=sns.clustermap(
             anidf.fillna(0), 
-            cmap=cmap, 
-            vmin=anidf.describe().loc['min',:].describe()['min'], 
-            vmax=100, 
+            cmap=custom_cmap, 
+            vmin=round(anidf.describe().loc['min',:].describe()['min']), 
+            vmax=vmax, 
             linewidths=linewidths, 
             linecolor=linecolor, 
             figsize=figsize,
@@ -122,9 +128,9 @@ def plot(anidf,
     else:
         ax=sns.clustermap(
             anidf.fillna(0), 
-            cmap=cmap, 
+            cmap=custom_cmap, 
             vmin=anidf.describe().loc['min',:].describe()['min'], 
-            vmax=100, 
+            vmax=vmax, 
             linewidths=linewidths, 
             linecolor=linecolor, 
             figsize=figsize,

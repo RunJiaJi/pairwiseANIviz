@@ -19,6 +19,7 @@ def main():
         row_cluster=args.rowCluster,
         col_cluster=args.colCluster,
         annotation=args.annotation,
+        vmax=args.illustrateOverValue,
         classidf=classidf,
         taxaLevel=args.taxaLevel,
         palette=args.colorPalette,
