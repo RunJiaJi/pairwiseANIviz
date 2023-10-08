@@ -3,10 +3,12 @@
 [![PyPI version](https://badge.fury.io/py/pairwiseANIviz.svg)](https://badge.fury.io/py/pairwiseANIviz)
 
 Pairwise ANI (Average Nucleotide Identity) visulization tool. This tool is designed to help visualize the results of pairwise comparisons among multiple genomes.
-pairwiseANIviz first using [Scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.cluster.hierarchy.linkage.html#scipy.cluster.hierarchy.linkage) to perform hierarchical/agglomerative clustering, a clustermap is then generated using [Seaborn](https://seaborn.pydata.org/generated/seaborn.clustermap.html) which supports different [Matplotlib]() colormaps.
+
+First, [Scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.cluster.hierarchy.linkage.html#scipy.cluster.hierarchy.linkage) is used to perform hierarchical/agglomerative clustering, followed by generating a clustermap using [Seaborn](https://seaborn.pydata.org/generated/seaborn.clustermap.html) that supports various [Matplotlib](https://matplotlib.org/stable/users/explain/colors/colormaps.html) colormaps.
+
 
 #### Main features
-* Support different __matplotlib colormaps__
+* Support various __matplotlib colormaps__
 * Taxonomic classification result can be included to __illustrate different taxa__
 * Specific __outrange ANI values__ can be set (eg. 95% ANI values) 
 * __Multi-format outputs (JPG, PNG, TIFF, SVG, PDF, EPS)__
@@ -101,4 +103,4 @@ Runjia Ji, 2023
 ```
 
 ## Contact
-If you have any questions using AsperaSRAgetter, feel free to open an issue or contact me jirunjia@gmail.com.
+If you have any questions using pairwiseANIviz, feel free to open an issue or contact me jirunjia@gmail.com.
