@@ -2,7 +2,7 @@
 
 [![PyPI version](https://badge.fury.io/py/pairwiseANIviz.svg)](https://badge.fury.io/py/pairwiseANIviz)
 
-Pairwise ANI (Average Nucleotide Identity) visulization tool. This tool is suitable for visualizing the results of pairwise comparisons between multiple genomes.
+Pairwise ANI (Average Nucleotide Identity) visulization tool. This tool is designed to help visualize the results of pairwise comparisons among multiple genomes.
 pairwiseANIviz first using [Scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.cluster.hierarchy.linkage.html#scipy.cluster.hierarchy.linkage) to perform hierarchical/agglomerative clustering, a clustermap is then generated using [Seaborn](https://seaborn.pydata.org/generated/seaborn.clustermap.html) which supports different [Matplotlib]() colormaps.
 
 #### Main features
