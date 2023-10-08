@@ -38,7 +38,7 @@ def get_args():
     parser.add_argument('--rowCluster', help="Draw the row cluster.", action='store_true')
     parser.add_argument('--colCluster', help="Draw the column cluster.", action='store_true')
     parser.add_argument('--annotation', help="Show ANI values on the plot.", action='store_true')
-    parser.add_argument('--illustrateOverValue',type=float, 
+    parser.add_argument('--outrangeValue',type=float, 
                         default=100,
                         help="Cells have ANI values over specific threshold set to red (eg. cells have ANI value >=0.95 set to red) (default 100).")
     
