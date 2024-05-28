@@ -150,7 +150,7 @@ def plot(anidf,
                 "spacing": "proportional"
             },
             tree_kws={"linewidths": 1.5},
-            fmt="d"
+            fmt=".3g"
             )
     
     # save figs
