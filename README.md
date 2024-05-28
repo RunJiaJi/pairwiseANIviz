@@ -1,6 +1,9 @@
 # pairwiseANIviz
 
 [![PyPI version](https://badge.fury.io/py/pairwiseANIviz.svg)](https://badge.fury.io/py/pairwiseANIviz)
+[![Downloads](https://static.pepy.tech/badge/pairwiseaniviz)](https://pepy.tech/project/pairwiseaniviz)
+[![Downloads](https://static.pepy.tech/badge/pairwiseaniviz/month)](https://pepy.tech/project/pairwiseaniviz)
+[![Downloads](https://static.pepy.tech/badge/pairwiseaniviz/week)](https://pepy.tech/project/pairwiseaniviz)
 
 Pairwise ANI (Average Nucleotide Identity) visulization tool. This tool is designed to help visualize the results of pairwise comparisons among multiple genomes.
 
