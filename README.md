@@ -110,7 +110,7 @@ Runjia Ji, 2023
 
 If you use pairwiseANIviz in your research, please cite our related paper:
 
-Ji, R., Wan, J., Liu, J. et al. Linking morphology, genome, and metabolic activity of uncultured magnetotactic Nitrospirota at the single-cell level. Microbiome 12, 158 (2024). https://doi.org/10.1186/s40168-024-01837-6
+**Ji, R., Wan, J., Liu, J. et al. Linking morphology, genome, and metabolic activity of uncultured magnetotactic Nitrospirota at the single-cell level. Microbiome 12, 158 (2024). https://doi.org/10.1186/s40168-024-01837-6**
 
 
 ## Contact
