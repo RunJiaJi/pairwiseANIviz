@@ -38,7 +38,7 @@ First, [Scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.cluste
 ```shell
 # Dependencies: Matplotlib, Seaborn, Scipy, Pandas
 # Install pairwiseANIviz using pip
-pip install pairwiseANIviz==1.0
+pip install pairwiseANIviz==1.3
 ```
 
 
@@ -100,6 +100,9 @@ General usage
 
 2. ANI result visulization **with classification info**:
    $ pairwiseANIviz ani_result.txt --classificationFile classification_result.tsv
+
+3. ANI result visualization **with hierarchical clustering**:
+   $ pairwiseANIviz --rowCluster --colCluster ani_result.txt
 
 Runjia Ji, 2023
 

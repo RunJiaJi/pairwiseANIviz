@@ -12,7 +12,39 @@ import sys
 
 # read the ani result and classification result
 def readIput(anifile, classifile=None):
-    anidf = pd.read_csv(anifile, sep='\t', header=None).rename(columns={0:'q',1:'r',2:'ANI'}).iloc[:,:3]
+    # First, check if the file has a header line
+    with open(anifile, 'r') as f:
+        first_line = f.readline().strip()
+    
+    # Check if first line looks like a header (contains non-numeric text)
+    has_header = False
+    if first_line:
+        # Common FastANI header patterns
+        header_patterns = ['query', 'reference', 'ani', 'mapped_fragments', 'total_fragments']
+        if any(pattern in first_line.lower() for pattern in header_patterns):
+            has_header = True
+        # Also check if first line contains any non-numeric values (except for genome names)
+        first_line_parts = first_line.split()
+        if len(first_line_parts) >= 3:
+            # Check if the third column (ANI value) is not numeric
+            try:
+                float(first_line_parts[2])
+            except ValueError:
+                has_header = True
+    
+    # Read the file with or without header using \s+ (any whitespace)
+    if has_header:
+        # Read with header but rename columns by position to be flexible
+        anidf = pd.read_csv(anifile, sep=r'\s+', header=0, engine='python')
+        # Rename first three columns regardless of their actual names
+        anidf.columns.values[0] = 'q'
+        anidf.columns.values[1] = 'r' 
+        anidf.columns.values[2] = 'ANI'
+        anidf = anidf.iloc[:,:3]
+        print('Header detected and skipped in ANI file.')
+    else:
+        anidf = pd.read_csv(anifile, sep=r'\s+', header=None, engine='python').rename(columns={0:'q',1:'r',2:'ANI'}).iloc[:,:3]
+    
     anidf = anidf.pivot(index='q', columns='r', values='ANI')
 
     # test if the numbers of cols and rows are the same

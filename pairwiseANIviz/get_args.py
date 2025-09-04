@@ -15,7 +15,7 @@ def get_args():
         "Runjia Ji, 2023"
     )
 
-    parser.add_argument('-v', '--version', action='version', version='%(prog)s 1.1', help='Show pairwiseANIviz version number and exit.')
+    parser.add_argument('-v', '--version', action='version', version='%(prog)s 1.3', help='Show pairwiseANIviz version number and exit.')
     parser.add_argument('anifile', type=str, help='File containing pairwise ANI analysis result.')
     parser.add_argument('-o', '--outdir', type=str, default='./pairwiseANIviz', help="Directory to save the output figures (default 'pairwiseANIviz').")
     parser.add_argument('--method', type=str, choices=['single', 'complete', 'average', 'weighted', 'centroid', 'median', 'ward'], 
