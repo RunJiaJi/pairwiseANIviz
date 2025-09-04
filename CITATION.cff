@@ -1,13 +1,6 @@
 cff-version: 1.2.0
 message: If you use this software, please cite it as below.
-authors:
-  - family-names: Ji
-    given-names: Runjia
-    orcid: "https://orcid.org/0000-0001-7316-9251"
-title: "pairwiseANIviz: Pairwise ANI (Average Nucleotide Identity) visulization tool."
-version: 1.3
-date-released: 2025-09-04
-url: https://github.com/RunJiaJi/pairwiseANIviz
+
 references:
   - type: article
     title: "Linking morphology, genome, and metabolic activity of uncultured magnetotactic Nitrospirota at the single-cell level"
